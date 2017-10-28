@@ -1,0 +1,4 @@
+FROM debian:buster
+RUN apt-get update && apt-get -y install perl clustalo paml
+ADD pal2nal.pl /usr/local/bin/pal2nal.pl
+RUN chmod +x /usr/local/bin/pal2nal.pl 
