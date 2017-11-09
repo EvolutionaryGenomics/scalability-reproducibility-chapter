@@ -26,7 +26,7 @@ hints:  # Four different ways to specify the runtime environment
       # of this CWL description as configurable inputs
       - entryname: paml0-3.ctl
         entry: |
-          seqfile  = $(inputs.seq.path)
+          seqfile  = $(inputs.sequences.path)
           treefile = $(inputs.tree.path)
           outfile = results0-3.txt   * main result file name
           noisy = 9        * 0,1,2,3,9: how much rubbish on the screen
@@ -48,7 +48,7 @@ hints:  # Four different ways to specify the runtime environment
           getSE = 0        * 0: don't want them, 1: want S.E.s of estimates
 
 inputs:
-  seq: File
+  sequences: File
   tree: File
 
 outputs:

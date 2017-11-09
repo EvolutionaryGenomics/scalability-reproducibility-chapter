@@ -45,6 +45,6 @@ steps:
   codeml:
     run: codeml.cwl
     in:
-       seq: pal2nal/alignment
+       sequences: pal2nal/alignment
        tree: clustal/guide_tree
     out: [results]
