@@ -4,14 +4,28 @@ class: Workflow
 cwlVersion: v1.0
 
 inputs:
-    proteins_to_align: File
+    proteins_to_align:
+      type: File
+      label: proteins
     nucleotides: File
 
 outputs:
-    alignment1: { type: File, outputSource: clustal/alignment }
-    guide_tree: { type: File, outputSource: clustal/guide_tree }
-    alignment2: { type: File, outputSource: pal2nal/alignment }
-    results: { type: File, outputSource: codeml/results }
+    alignment1:
+      type: File
+      outputSource: clustal/alignment
+      label: proteins alignment
+    guide_tree:
+      type: File
+      outputSource: clustal/guide_tree
+      label: guide tree
+    alignment2:
+      type: File
+      outputSource: pal2nal/alignment
+      label: nucleotides alignment
+    results:
+      type: File
+      outputSource: codeml/results
+      label: dN/dS results
 
 
 steps:
@@ -31,6 +45,6 @@ steps:
   codeml:
     run: codeml.cwl
     in:
-       seq: pal2nal/alignment
+       sequences: pal2nal/alignment
        tree: clustal/guide_tree
     out: [results]
