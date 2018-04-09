@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:  # Four different ways to specify the runtime environment
   DockerRequirement: # 1. Remote Docker container
-    dockerPull: quay.io/biocontainers/paml
+    dockerPull: quay.io/biocontainers/paml:4.9--1
     # # 2. Since paml is packaged for Debian we could have used the directive
     # # below if there wasn't paml container available from biocontainers.pro
     # dockerImageId: debian-paml
